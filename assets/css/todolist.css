@@ -1,0 +1,60 @@
+* {
+    font-family: 'Sedgwick Ave', cursive;
+}
+
+html {
+    background-color: #fff;
+}
+
+h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.note {
+    width: 350px;
+    min-height: 350px;
+    margin: 5% auto;
+    padding: 10px 20px;
+    background-color: #ff8;
+    -webkit-box-shadow: 5px 5px 7.5px -2.5px #777;
+    -moz-box-shadow: 5px 5px 7.5px -2.5px #777;
+    box-shadow: 5px 5px 7.5px -2.5px #777;
+}
+
+.new-task {
+    width: 100%;
+    background-color: #ff8;
+    padding: 5px;
+    border: none;
+    box-sizing: border-box;
+    opacity: .5;
+    outline: none;
+}
+
+.new-task:focus {
+    border-bottom: .25px solid #000;
+}
+
+.done {
+    text-decoration: line-through;
+    color: #999;
+    opacity: .5;
+}
+
+::placeholder {
+    color: #999;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: #999;
+}
+
+::-ms-input-placeholder {
+    color: #999;
+}
