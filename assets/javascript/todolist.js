@@ -1,16 +1,17 @@
 //$("li").on("click", function() { $(this).toggleClass("done") });
 $("ul").on("click", "li", function() { $(this).toggleClass("done") });
 
-$("ul").on("mouseover", "li", function() {
-    $(this).prepend(`<i class='fa fa-trash' aria-hidden='true'></i> `);
+$("ul").on("mouseenter", "li", function() {
+    $(this).append(`  <i class='fa fa-trash bin' aria-hidden='true'></i>`);
 });
 
-$("ul").on("mouseout", "li", function() {
-    $(this).next().remove();
+$("ul").on("mouseleave", "li", function(e) {
+    $(this).children(".bin").remove();
+    e.stopPropagation();
 });
 
 //$("span").on("click", function(e) {
-$("ul").on("click", ".borrar", function(e) {
+$("ul").on("click", ".bin", function(e) {
     //$(this).parent().hide(); //Esconde el elemento
     $(this).parent().remove(); //Remueve el elemento
     e.stopPropagation();
