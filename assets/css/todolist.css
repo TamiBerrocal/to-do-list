@@ -15,6 +15,14 @@ ul {
     padding: 0;
 }
 
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
 .note {
     width: 350px;
     min-height: 350px;
