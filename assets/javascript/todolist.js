@@ -21,7 +21,7 @@ $("ul").on("click", ".bin", function(e) {
 
 $("input[type='text']").on("keypress", (function(e) { //El [type='text'] en el selector permite limitar la selección a los input de tipo "text"
     if(e.key === "Enter") {
-        $("ul").append(`<li><i class="checkbox far fa-square"></i> <span class="task-desc">${$(this).val()}</span></li>`);
+        $("ul").append(`<li class="task"><input type="checkbox" class="checkbox"> <span class="task-desc">${$(this).val()}</span></li>`);
         $(this).val(""); //$(this).val() recupera el valor del input
         event.stopPropagation();
     }
