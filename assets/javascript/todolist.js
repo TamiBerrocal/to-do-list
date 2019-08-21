@@ -1,6 +1,6 @@
 //$("li").on("click", function() { $(this).toggleClass("done") });
-$("ul").on("click", ".checkbox", function() {
-    $(this).parent().children(".task-desc").toggleClass("done");
+$("ul").on("click", "input[type='checkbox']", function() {
+    $(this).parent().parent().children(".task-desc").toggleClass("done");
 });
 
 $("ul").on("mouseenter", ".task-desc", function(e) {
@@ -21,7 +21,7 @@ $("ul").on("click", ".bin", function(e) {
 
 $("input[type='text']").on("keypress", (function(e) { //El [type='text'] en el selector permite limitar la selección a los input de tipo "text"
     if(e.key === "Enter") {
-        $("ul").append(`<li class="task"><input type="checkbox" class="checkbox"> <span class="task-desc">${$(this).val()}</span></li>`);
+        $("ul").append(`<li class="task"><label class="checkbox-container"><input type="checkbox"><span class="checkbox"></span></label> <span class="task-desc">${$(this).val()}</span></li>`);
         $(this).val(""); //$(this).val() recupera el valor del input
         event.stopPropagation();
     }
