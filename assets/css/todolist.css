@@ -43,6 +43,7 @@ h1 {
     -moz-appearance: none;
     appearance: none;
     outline: none;
+    flex: none;
     box-sizing: border-box;
     height: 13px;
     width: 13px;
