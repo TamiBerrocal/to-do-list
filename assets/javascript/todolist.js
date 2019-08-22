@@ -1,12 +1,19 @@
-//$("li").on("click", function() { $(this).toggleClass("done") });
-$("ul").on("click", ".checkbox", function() {
-    $(this).parent().children(".task-desc").toggleClass("done");
+const _ul = $("ul");
+const _newTask = $(".new-task");
+
+_ul.on("click", ".checkbox", function() {
+    $(this).parent().find(".task-desc > .text").toggleClass("done");
 });
 
-$(".new-task").on("keypress", (function(e) { //"input[type='text']": el "[type='text']" en el selector permite limitar la selección a los input de tipo "text"
+_ul.on("click", ".task-desc > .bin", function() {
+    $(this).parent().parent().remove();
+});
+
+//"input[type='text']": el "[type='text']" en el selector permite limitar la selección a los input de tipo "text"
+_newTask.on("keypress", (function(e) {
     if(e.key === "Enter") {
-        $("ul").append(`<li class="task"><input type="checkbox" class="checkbox"><span class="task-desc">${$(this).val()}</span><i class='fa fa-trash bin' aria-hidden='true'></i></li>`);
-        $(this).val(""); //$(this).val() recupera el valor del input
+        _ul.append(`<li class="task"><input type="checkbox" class="checkbox"><div class="task-desc"><span class="text">${$(this).val()}</span><i class='fa fa-trash bin' aria-hidden='true'></i></div></li>`);
+        $(this).val("");
         event.stopPropagation();
     }
 }));
