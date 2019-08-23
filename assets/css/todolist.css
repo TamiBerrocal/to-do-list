@@ -42,7 +42,6 @@ h1 {
 
 .text {
     min-width: 0;
-    margin-right: 5px;
     word-wrap: break-word;
 }
 
@@ -92,6 +91,7 @@ h1 {
 
 .task-desc:hover > .bin {
     display: block;
+    margin-left: 5px;
 }
 
 .new-task {
